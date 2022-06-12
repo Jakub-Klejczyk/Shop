@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Public+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="nav-bar--left">
+        <img
+          class="menu"
+          src="./ecommerce-product-page-main/images/icon-menu.svg"
+          alt=""
+        />
+        <img
+          class="logo"
+          src="./ecommerce-product-page-main/images/logo.svg"
+          alt=""
+        />
+      </div>
+      <div class="nav-bar--right">
+        <img
+          class="cart"
+          src="./ecommerce-product-page-main/images/icon-cart.svg"
+          alt=""
+        />
+        <img
+          class="avatar"
+          src="./ecommerce-product-page-main/images/image-avatar.png"
+          alt=""
+        />
+      </div>
+    </nav>
+    <section class="slider">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="./ecommerce-product-page-main/images/image-product-1.jpg"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./ecommerce-product-page-main/images/image-product-2.jpg"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./ecommerce-product-page-main/images/image-product-3.jpg"
+            />
+          </div>
+        </div>
+        <div class="swiper-button swiper-button-prev"></div>
+        <div class="swiper-button swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="text">
+        <p>SNEAKTER COMPANY</p>
+        <h2>Fall Limited Edition Sneakers</h2>
+      </div>
+      <div class="description">
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+      </div>
+      <div class="price">
+        <div class="price-text">
+          <p>$125.00</p>
+          <p>50%</p>
+        </div>
+        <div class="price-light">
+          <p>$250.00</p>
+        </div>
+      </div>
+    </section>
+    <section class="active">
+      <div class="number">
+        <button class="minus">-</button>
+        <input class="number-input" type="number" placeholder="0" />
+        <button class="plus">+</button>
+      </div>
+      <button class="button">
+        <img
+          class="cart"
+          src="./ecommerce-product-page-main/images/icons8-shopping-cart-with-money-24.png"
+          alt=""
+        />Add to cart
+      </button>
+    </section>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

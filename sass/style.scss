@@ -1,0 +1,176 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+$accent: hsl(26, 100%, 55%);
+$pale-accent: hsl(25, 100%, 94%);
+$font-content: hsl(220, 13%, 13%);
+$input: hsl(223, 64%, 98%);
+
+$normal: 400;
+$bolder: 700;
+
+body {
+  font-size: 16px;
+  font-family: "Public Sans", sans-serif;
+}
+
+.nav-bar {
+  display: flex;
+  height: 8vh;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  &--left {
+    width: auto;
+    .menu {
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+    }
+    .logo {
+      height: 20px;
+      width: 28vw;
+    }
+  }
+  &--right {
+    width: auto;
+    .cart {
+      width: 20px;
+      height: 20px;
+    }
+    .avatar {
+      width: 26px;
+      height: 26px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.swiper {
+  height: 40vh;
+  width: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  &-button-prev,
+  &-button-next {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.content {
+  padding: 20px;
+  width: 100%;
+
+  .text {
+    font-weight: $bolder;
+    width: 70%;
+    p {
+      color: $accent;
+      font-size: 0.8em;
+      letter-spacing: 2px;
+      padding-bottom: 1em;
+    }
+  }
+  .description {
+    color: $font-content;
+    line-height: 1.6em;
+    padding: 1em 0;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4vh;
+    font-weight: $bolder;
+
+    &-text {
+      display: flex;
+      align-items: center;
+      p:first-child {
+        font-size: 1.6rem;
+        padding-right: 0.5em;
+      }
+      p:nth-child(2) {
+        color: $accent;
+        width: max-content;
+        background-color: $pale-accent;
+        padding: 0.2rem;
+        border-radius: 6px;
+      }
+    }
+    &-light {
+      p {
+        font-weight: $normal;
+        color: $font-content;
+        text-decoration: line-through;
+      }
+    }
+  }
+}
+
+.active {
+  padding: 20px 0;
+  width: 100%;
+  margin-bottom: 10em;
+  position: relative;
+
+  .number {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $input;
+    &-input {
+      border-style: none;
+      background-color: $input;
+      color: black;
+      text-align: center;
+      font-weight: $bolder;
+      font-size: 1.4em;
+      width: 60%;
+    }
+    &-input::placeholder {
+      color: black;
+    }
+
+    button {
+      border: none;
+      background-color: $input;
+      cursor: pointer;
+      color: $accent;
+      font-weight: $bolder;
+      font-size: 1.4em;
+    }
+  }
+  .button {
+    width: 80%;
+    margin: auto;
+    cursor: pointer;
+    background-color: $accent;
+    color: white;
+    border-radius: 6px;
+    padding: 1em 60px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    img {
+      padding-right: 2em;
+    }
+  }
+}
