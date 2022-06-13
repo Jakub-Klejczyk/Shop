@@ -38,3 +38,66 @@ const closeMenu = document.querySelector(".close");
 closeMenu.addEventListener("click", function (e) {
   sideBar.style.display = "none";
 });
+
+const cart = document.querySelector(".cart");
+const shop = document.querySelector(".shop");
+
+cart.addEventListener("click", function (e) {
+  if (shop.style.display == "block") {
+    shop.style.display = "none";
+  } else {
+    shop.style.display = "block";
+  }
+});
+
+const button = document.querySelector(".button");
+const navCart = document.querySelector(".nav-img");
+const span = document.querySelector(".span");
+
+button.addEventListener("click", function (e) {
+  if (iteamsNumber.value > 0) {
+    span.style.display = "block";
+    span.textContent = iteamsNumber.value;
+  } else {
+    span.style.display = "none";
+  }
+});
+
+const trash = document.createElement("img");
+trash.src = `./ecommerce-product-page-main/images/trash.png`;
+trash.classList.add("trash");
+//trash.innerHTML = `<img class="trash" src="./ecommerce-product-page-main/images/trash.png" alt="" />`;
+
+const btnShop = document.querySelector(".button");
+const text = document.querySelector(".text h2").textContent;
+const price = document.querySelector(".price-first").textContent;
+const shopElems = document.querySelector(".shop--elems");
+
+btnShop.addEventListener("click", function (e) {
+  const numbers = iteamsNumber.value;
+  const total = parseInt(price) * numbers;
+  const iteam = `
+  <div class="iteam-container">
+        <div class="iteams">
+          <img class="iteam-img"
+            src="./ecommerce-product-page-main/images/image-product-1-thumbnail.jpg"
+            alt=""
+          />
+          <div class="iteam--text">
+            <p class="text-one">${text}</p>
+            <p class="text-two">
+            ${price}.00 x ${number} <span class="iteam--span">$${total}.00</span>
+            </p>
+          </div class="div-trash">
+          ${trash}
+        </div>
+        <button class="iteam--button">Checkout</button>
+      </div>`;
+  shopElems.innerHTML = iteam;
+  // const divTrash = document.querySelector(".div-trash");
+  // divTrash.append(trash);
+});
+
+trash.addEventListener("click", function () {
+  shopElems.innerHTML = `<p>Your cart is empty.</p>`;
+});
