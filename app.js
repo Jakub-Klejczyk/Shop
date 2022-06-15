@@ -95,7 +95,9 @@ btnShop.addEventListener("click", function (e) {
         </div>
         <button class="iteam--button">Checkout</button>
       </div>`;
-  shopElems.innerHTML = iteam;
+  if (iteamsNumber.value > 0) {
+    shopElems.innerHTML = iteam;
+  }
 });
 
 function trash() {
