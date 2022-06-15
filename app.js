@@ -14,10 +14,7 @@ const btnAdd = document.querySelector(".plus");
 const btnMin = document.querySelector(".minus");
 let iteamsNumber = document.querySelector(".number-input");
 let number = 0;
-
-iteamsNumber.addEventListener("keypress", function (e) {
-  e.preventDefault();
-});
+let numberCatch = 0;
 
 btnAdd.addEventListener("click", function (e) {
   number++;
@@ -62,6 +59,9 @@ button.addEventListener("click", function (e) {
   if (iteamsNumber.value > 0) {
     span.style.display = "block";
     span.textContent = iteamsNumber.value;
+    numberCatch = iteamsNumber.value;
+    iteamsNumber.value = 0;
+    number = 0;
   } else {
     span.style.display = "none";
   }
@@ -74,7 +74,7 @@ const shopElems = document.querySelector(".shop--elems");
 
 btnShop.addEventListener("click", function (e) {
   const numbers = iteamsNumber.value;
-  const total = parseInt(price) * numbers;
+  const total = parseInt(price) * numberCatch;
   const iteam = `
   <div class="iteam-container">
         <div class="iteams">
@@ -85,7 +85,7 @@ btnShop.addEventListener("click", function (e) {
           <div class="iteam--text">
             <p class="text-one">${text}</p>
             <p class="text-two">
-            ${price}.00 x ${number} <span class="iteam--span">$${total}.00</span>
+            ${price}.00 x ${numberCatch} <span class="iteam--span">$${total}.00</span>
             </p>
           </div class="div-trash">
           <img class="trash" onclick="trash()"
@@ -95,7 +95,7 @@ btnShop.addEventListener("click", function (e) {
         </div>
         <button class="iteam--button">Checkout</button>
       </div>`;
-  if (iteamsNumber.value > 0) {
+  if (numberCatch > 0) {
     shopElems.innerHTML = iteam;
   }
 });
