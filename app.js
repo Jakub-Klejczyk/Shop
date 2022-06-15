@@ -15,6 +15,10 @@ const btnMin = document.querySelector(".minus");
 let iteamsNumber = document.querySelector(".number-input");
 let number = 0;
 
+iteamsNumber.addEventListener("keypress", function (e) {
+  e.preventDefault();
+});
+
 btnAdd.addEventListener("click", function (e) {
   number++;
   iteamsNumber.value = number;
@@ -63,11 +67,6 @@ button.addEventListener("click", function (e) {
   }
 });
 
-const trash = document.createElement("img");
-trash.src = `./ecommerce-product-page-main/images/trash.png`;
-trash.classList.add("trash");
-//trash.innerHTML = `<img class="trash" src="./ecommerce-product-page-main/images/trash.png" alt="" />`;
-
 const btnShop = document.querySelector(".button");
 const text = document.querySelector(".text h2").textContent;
 const price = document.querySelector(".price-first").textContent;
@@ -89,15 +88,17 @@ btnShop.addEventListener("click", function (e) {
             ${price}.00 x ${number} <span class="iteam--span">$${total}.00</span>
             </p>
           </div class="div-trash">
-          ${trash}
+          <img class="trash" onclick="trash()"
+            src="./ecommerce-product-page-main/images/trash.png"
+            alt=""
+          />
         </div>
         <button class="iteam--button">Checkout</button>
       </div>`;
   shopElems.innerHTML = iteam;
-  // const divTrash = document.querySelector(".div-trash");
-  // divTrash.append(trash);
 });
 
-trash.addEventListener("click", function () {
+function trash() {
   shopElems.innerHTML = `<p>Your cart is empty.</p>`;
-});
+  span.style.display = "none";
+}
